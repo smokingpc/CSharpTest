@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="jamming" Class="jammingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.23.142;Initial Catalog=jamming;User ID=roy" SettingsObjectName="DatasetDesignerTest.Properties.Settings" SettingsPropertyName="jammingConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.FREQ_TYPE" Member="FREQ_TYPEs">
+    <Type Name="FREQ_TYPE">
+      <Column Name="TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JAM_TYPE" Member="JAM_TYPEs">
+    <Type Name="JAM_TYPE">
+      <Column Name="MODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PA_POWER" Member="PA_POWERs">
+    <Type Name="PA_POWER">
+      <Column Name="POWER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RULE_DIGITAL" Member="RULE_DIGITALs">
+    <Type Name="RULE_DIGITAL">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="JAM_MODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FREQ_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FREQ1_HZ" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="FREQ2_HZ" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SPEED" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TELEGRAM" Type="System.String" DbType="NChar(127)" CanBeNull="true" />
+      <Column Name="POWER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
