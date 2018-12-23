@@ -150,15 +150,8 @@ namespace MemoryLeakTest
             foreach (var item in buffers)
                 writer.Write(item, 0, item.Length);
 
-<<<<<<< HEAD
-            //for (int i = 0; i < buffers.Count; i++)
-            //    buffers[i] = null;
-            buffers.Clear();
-            buffers = null;
-=======
             writer.Close();
             writer.Dispose();
->>>>>>> 89cb229e4f66cffa2c24ab590a348bd45e266d78
             writer = null;
 
             //GC似乎只會自動回收 generation 最新的那層
