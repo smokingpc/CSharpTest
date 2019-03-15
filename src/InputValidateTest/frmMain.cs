@@ -15,7 +15,7 @@ namespace InputValidateTest
         public frmMain()
         {
             InitializeComponent();
-            dxErrorProvider1.SetErrorType();
+            //dxErrorProvider1.SetErrorType();
         }
 
         private void textBox1_Validating(object sender, CancelEventArgs e)
