@@ -102,6 +102,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpServerTest1", "TcpServer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpServerTest2", "TcpServerTest2\TcpServerTest2.csproj", "{09ED52A3-5EF6-48F9-A6E3-9AE55FD4C829}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerResolutionTest", "TimerResolutionTest\TimerResolutionTest.csproj", "{C7843701-4548-434B-8E4D-A8C9870E9FB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -292,6 +294,10 @@ Global
 		{09ED52A3-5EF6-48F9-A6E3-9AE55FD4C829}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09ED52A3-5EF6-48F9-A6E3-9AE55FD4C829}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09ED52A3-5EF6-48F9-A6E3-9AE55FD4C829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7843701-4548-434B-8E4D-A8C9870E9FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7843701-4548-434B-8E4D-A8C9870E9FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7843701-4548-434B-8E4D-A8C9870E9FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7843701-4548-434B-8E4D-A8C9870E9FB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
