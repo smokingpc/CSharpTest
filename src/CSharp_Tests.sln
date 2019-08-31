@@ -112,6 +112,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpTest", "TcpTest\TcpTest.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdpTest", "UdpTest\UdpTest.csproj", "{E60923AD-66D7-431F-ADA0-BA4CD6AE8619}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLogTest", "NLogTest\NLogTest.csproj", "{6238C15F-2865-4ECC-A121-8F4DC6B23D6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -322,6 +324,10 @@ Global
 		{E60923AD-66D7-431F-ADA0-BA4CD6AE8619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E60923AD-66D7-431F-ADA0-BA4CD6AE8619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E60923AD-66D7-431F-ADA0-BA4CD6AE8619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6238C15F-2865-4ECC-A121-8F4DC6B23D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6238C15F-2865-4ECC-A121-8F4DC6B23D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6238C15F-2865-4ECC-A121-8F4DC6B23D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6238C15F-2865-4ECC-A121-8F4DC6B23D6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
