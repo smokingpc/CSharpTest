@@ -40,8 +40,9 @@ namespace DataBindingTest
             //DataSourceUpdateMode.OnPropertyChanged 指定TextBox每次變更時都會直接變更binding source object
             textBox1.DataBindings.Add(new Binding("Text", Item, "Name", false, DataSourceUpdateMode.OnPropertyChanged));
             textBox3.DataBindings.Add(ctx);
-
             //dataGridView1.DataSource = DataSource;
+            Item.Phone = "987654321";
+            ctx.ReadValue();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
