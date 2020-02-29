@@ -48,6 +48,14 @@ namespace MessagePackTest
             textBox2.SetLine(msg);
             msg = string.Format("Convert from blob2 to JSON=>\r\n{0}", MessagePackSerializer.ConvertToJson(blob2));
             textBox2.SetLine(msg);
+
+            textBox2.SetLine("[Test Inheritance]");
+            CMyData3 data3 = new CMyData3() { Age = 44 };
+            var blob3 = MessagePackSerializer.Serialize(data3);
+            msg = string.Format("Blob3 Converted, binary size={0}", blob3.Length);
+            textBox2.SetLine(msg);
+            msg = string.Format("Convert from blob3 to JSON=>\r\n{0}", MessagePackSerializer.ConvertToJson(blob3));
+            textBox2.SetLine(msg);
         }
     }
 
@@ -59,6 +67,7 @@ namespace MessagePackTest
     //3. 轉成JSON時會省去 KeyName
     //4. 如果 class 以 [MessagePackObject(keyAsPropertyName:true)] 修飾，
     //   則不需要[Key()] 修飾member，但這樣轉出的Blob比較肥
+    //5. 如果有繼承，child class的欄位 Key() 號碼不能跟parent class欄位號碼相同，要接著排下去
     [MessagePackObject]
     public class CMyData
     {
@@ -83,5 +92,12 @@ namespace MessagePackTest
         public int Age { get; set; }
 
         public byte[] Payload = new byte[] { 0x35, 0x36, 0x37, 0x38 };
+    }
+
+    [MessagePackObject]
+    public class CMyData3 : CMyData
+    {
+        [Key(3)]
+        public string NickAlias = "Alias";
     }
 }
