@@ -46,15 +46,21 @@ namespace AppConfigTest
             //  will open roaming config in user profile path.
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             var settings = config.AppSettings.Settings;
-            settings["Name"].Value = name;  //update value
-            //settings.Add("Name", name);   //add value
+            if(null != settings["Name"])
+                settings["Name"].Value = name;  //update value
+            else
+                settings.Add("Name", name);   //add value
 
-            settings["Tel"].Value = tel;
-            //settings.Add("Tel", tel);
+            if (null != settings["Tel"])
+                settings["Tel"].Value = tel;
+            else
+                settings.Add("Tel", tel);
 
             string data = textBox3.Text + "," + textBox4.Text;
-            settings["Foods"].Value = data;
-            //settings.Add("Foods", data);
+            if (null != settings["Foods"])
+                settings["Foods"].Value = data;
+            else
+                settings.Add("Foods", data);
             config.Save(ConfigurationSaveMode.Modified);
         }
     }
