@@ -134,6 +134,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBoxTest", "ComboBoxTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsEventLogTest", "WindowsEventLogTest\WindowsEventLogTest.csproj", "{F584E9C5-6FE8-488B-AF43-B21588D83204}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppConfigTest", "AppConfigTest\AppConfigTest.csproj", "{C6F7D784-3667-426D-9010-C4C29B6F03FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -368,6 +370,10 @@ Global
 		{F584E9C5-6FE8-488B-AF43-B21588D83204}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F584E9C5-6FE8-488B-AF43-B21588D83204}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F584E9C5-6FE8-488B-AF43-B21588D83204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6F7D784-3667-426D-9010-C4C29B6F03FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6F7D784-3667-426D-9010-C4C29B6F03FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6F7D784-3667-426D-9010-C4C29B6F03FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6F7D784-3667-426D-9010-C4C29B6F03FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -429,6 +435,7 @@ Global
 		{62C32FD7-207A-4FC6-BB11-D6541211D25D} = {A74D5DB0-4A31-448B-BFF2-EB599CDE6F78}
 		{C0C6C1C0-0D10-4582-BF41-7C2A8C161E0F} = {7B0B3781-3249-4452-B54D-FA27F35002DB}
 		{F584E9C5-6FE8-488B-AF43-B21588D83204} = {C2404909-4A95-4765-BA89-8C1B807EE4A8}
+		{C6F7D784-3667-426D-9010-C4C29B6F03FF} = {6CE96415-427D-4749-8C7E-FB0716FB8D35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4D2420E-8B03-4704-9AFC-27D16E8BB03B}
