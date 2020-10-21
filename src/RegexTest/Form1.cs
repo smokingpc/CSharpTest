@@ -37,8 +37,7 @@ namespace RegexTest
                 textBox3.AppendText("Regexp matched!\r\n");
                 if(match.Groups.Count > 0)
                 { 
-                    //matched group[0] is entire input string, skip it.
-                    for(var i=1; i< match.Groups.Count; i++)
+                    for(var i=0; i< match.Groups.Count; i++)
                     {
                         textBox3.AppendText(string.Format("Group[{0}]={1}\r\n", i, match.Groups[i]));
                     }
