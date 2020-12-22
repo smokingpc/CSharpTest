@@ -144,6 +144,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddStaticARP_Test", "AddSta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetMQ_MultiConnectTest", "NetMQ_MultiConnectTest\NetMQ_MultiConnectTest.csproj", "{67CC01FC-4EFF-482C-9581-941017E6C4B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemaphoreTest", "SemaphoreTest\SemaphoreTest.csproj", "{5AC3F1A9-7956-486F-A686-7C125CEB9466}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -394,6 +396,10 @@ Global
 		{67CC01FC-4EFF-482C-9581-941017E6C4B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67CC01FC-4EFF-482C-9581-941017E6C4B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67CC01FC-4EFF-482C-9581-941017E6C4B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AC3F1A9-7956-486F-A686-7C125CEB9466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AC3F1A9-7956-486F-A686-7C125CEB9466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AC3F1A9-7956-486F-A686-7C125CEB9466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AC3F1A9-7956-486F-A686-7C125CEB9466}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -459,6 +465,7 @@ Global
 		{32561161-1399-438E-B1D9-15B76E72E1C1} = {6CE96415-427D-4749-8C7E-FB0716FB8D35}
 		{7E576F7C-098C-41E9-AA16-6C8F6EB4A55D} = {843F4115-6929-4870-B5C0-C16A88D80584}
 		{67CC01FC-4EFF-482C-9581-941017E6C4B4} = {A74D5DB0-4A31-448B-BFF2-EB599CDE6F78}
+		{5AC3F1A9-7956-486F-A686-7C125CEB9466} = {6CE96415-427D-4749-8C7E-FB0716FB8D35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4D2420E-8B03-4704-9AFC-27D16E8BB03B}
