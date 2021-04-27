@@ -1,0 +1,15 @@
+﻿@{
+    //Layout = null;
+}
+
+@*<!DOCTYPE html>*@
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<form name="LOGIN" method="post" action="/Home/LoginSubmit">
+    UID = <input name="UID" />
+    <br />
+    PWD = <input name="PWD" />
+    <input name="SUBMIT" type="submit" />
+</form>

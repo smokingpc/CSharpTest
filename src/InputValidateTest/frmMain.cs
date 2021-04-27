@@ -58,6 +58,7 @@ namespace InputValidateTest
             try
             {
                 int age = int.Parse(textBox2.Text);
+                errorProvider1.SetError(textBox2, "");
             }
             catch (Exception ex)
             {
