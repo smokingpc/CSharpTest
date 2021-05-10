@@ -7,7 +7,7 @@ using MVC_Test.Models;
 
 namespace MVC_Test.Controllers
 {
-    public class HomeController : Controller
+    public class TestController : Controller
     {
         public ActionResult Index()
         {
