@@ -7,8 +7,13 @@ using MVC_Test.Models;
 
 namespace MVC_Test.Controllers
 {
-    public class TestController : Controller
+    public class HomeController : Controller
     {
+        private DateTime Timestamp = DateTime.MinValue;
+
+        //每個request進來似乎都會生一個不同的controller物件？
+        private Guid guid = Guid.NewGuid();
+
         public ActionResult Index()
         {
             ViewBag.AppName = "Web MVC App...";
@@ -17,6 +22,9 @@ namespace MVC_Test.Controllers
             {
                 ViewBag.Message = "LOGGED IN!!!";
             }
+
+            ViewBag.Timestamp = this.Timestamp;
+
             return View();
         }
 
@@ -25,7 +33,10 @@ namespace MVC_Test.Controllers
             ViewBag.AppName = "Web MVC App...";
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            Timestamp = DateTime.Now;
+            return RedirectToAction("Index", "Home");
+
+            //return View();
         }
 
         public ActionResult Contact()
