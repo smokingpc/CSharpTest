@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using DirectShowLib;
 
-
 namespace WebCamViewAndCapture
 {
     public partial class frmMain : Form
@@ -35,7 +34,7 @@ namespace WebCamViewAndCapture
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            StartVideoStream((DsDevice)comboBox1.SelectedItem);
+            StartVideoStream((DsDevice)comboBox1.SelectedItem, pictureBox1);
         }
 
         private void btnStop_Click(object sender, EventArgs e)

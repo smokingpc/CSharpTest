@@ -33,6 +33,8 @@ namespace WebCamViewAndCapture
             this.label1 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -73,11 +75,21 @@ namespace WebCamViewAndCapture
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 46);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(860, 503);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 445);
+            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label1);
@@ -88,6 +100,7 @@ namespace WebCamViewAndCapture
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,6 +112,7 @@ namespace WebCamViewAndCapture
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
