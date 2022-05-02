@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,15 +13,11 @@ namespace WebCamViewAndCapture
 {
     public partial class frmMain : Form
     {
+        private static readonly string BinPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
         private DsDevice CurrentDevice = null;
-        IFilterGraph2 GraphBuilder = null;
-        //IBaseFilter CaptureFilter = null;
-        IBaseFilter VmrRenderer = null;
+        private IFilterGraph2 GraphBuilder = null;
+        private IBaseFilter VmrRenderer = null;
 
-        //IPin PinPreviewOut = null;
-        //IPin PinCaptureOut = null;
-        //IPin PinPreviewStillOut = null;
-        //IPin PinCaptureStillOut = null;
         private void TeardownDirectShowGraph()
         {
             StopVideoStream();
@@ -32,6 +30,53 @@ namespace WebCamViewAndCapture
             {
                 Marshal.ReleaseComObject(GraphBuilder);
                 GraphBuilder = null;
+            }
+            CurrentDevice = null;
+        }
+
+        public void VideoWindowSnapshot(IVMRFilterConfig9 renderer)
+        {
+            if (null == VmrRenderer)
+                return;
+
+            IVMRWindowlessControl9 ctrl = (IVMRWindowlessControl9)renderer;
+            IntPtr imgptr = IntPtr.Zero;
+            Bitmap bmp = null;
+            try
+            {
+                ctrl.GetCurrentImage(out imgptr);
+                if (IntPtr.Zero != imgptr)
+                {
+                    BitmapInfoHeader header = new BitmapInfoHeader();
+                    Marshal.PtrToStructure(imgptr, header);
+                    //stride formula comes from MSDN
+                    //https://docs.microsoft.com/en-us/windows/win32/api/wingdi/ns-wingdi-bitmapinfoheader
+                    var stride = ((((header.Width * header.BitCount) + 31) & ~31) >> 3);
+                    
+                    //暫時假定輸出圖像是純DIB沒有Color Mask等額外資訊
+                    bmp = new Bitmap(header.Width, header.Height, stride, 
+                                PixelFormat.Format32bppArgb, imgptr+header.Size);
+                    //注意這邊撈出的CurrentImage，是上下顛倒狀態(沿著X軸鏡射)
+                    //要把它再鏡射回來才能存檔
+                    bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
+
+                    SaveFileDialog dlg = new SaveFileDialog();
+                    dlg.Filter = "Bitmap File (*.bmp)|*.bmp";
+                    dlg.InitialDirectory = BinPath;
+                    if(dlg.ShowDialog() == DialogResult.OK)
+                        bmp.Save(dlg.FileName, ImageFormat.Jpeg);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to save snapshot bmp file : " + ex.Message);
+            }
+            finally
+            {
+                if (bmp != null)
+                    bmp.Dispose();
+                if (IntPtr.Zero != imgptr)
+                    Marshal.FreeCoTaskMem(imgptr);
             }
         }
 
@@ -73,6 +118,7 @@ namespace WebCamViewAndCapture
             // Set Aspect-Ratio
             winless_ctrl.SetAspectRatioMode(VMR9AspectRatioMode.LetterBox);
             winless_ctrl.SetVideoPosition(null, DsRect.FromRectangle(target.ClientRectangle));
+            winless_ctrl = null;
         }
 
         public void SetupVideoStream(IFilterGraph2 builder, IBaseFilter capfiler, IBaseFilter renderer, Control target)
@@ -87,7 +133,7 @@ namespace WebCamViewAndCapture
             {
                 //Win7開始預設最好是使用 VideoMixingRenderer7，當然能用VideoMixingRenderer9更好
                 //原始的VideoRenderer吃不到顯卡的特殊能力
-                renderer = (IBaseFilter)new VideoMixingRenderer9();
+                //renderer = (IBaseFilter)new VideoMixingRenderer9();
                 SetupRenderWindow((IVMRFilterConfig9)renderer, target);
                 builder.AddFilter(renderer, "Video Mixing Renderer 9");
                 pin_in = DsFindPin.ByDirection(renderer, PinDirection.Input, 0);

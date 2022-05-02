@@ -34,6 +34,7 @@ namespace WebCamViewAndCapture
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCapture = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@ namespace WebCamViewAndCapture
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(534, 8);
+            this.btnStart.Location = new System.Drawing.Point(505, 8);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(120, 32);
             this.btnStart.TabIndex = 2;
@@ -67,7 +68,7 @@ namespace WebCamViewAndCapture
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(660, 8);
+            this.btnStop.Location = new System.Drawing.Point(631, 8);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(120, 32);
             this.btnStop.TabIndex = 2;
@@ -80,15 +81,26 @@ namespace WebCamViewAndCapture
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Location = new System.Drawing.Point(12, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(860, 503);
+            this.pictureBox1.Size = new System.Drawing.Size(865, 503);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnCapture
+            // 
+            this.btnCapture.Location = new System.Drawing.Point(757, 7);
+            this.btnCapture.Name = "btnCapture";
+            this.btnCapture.Size = new System.Drawing.Size(120, 32);
+            this.btnCapture.TabIndex = 4;
+            this.btnCapture.Text = "Capture";
+            this.btnCapture.UseVisualStyleBackColor = true;
+            this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.btnCapture);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
@@ -113,6 +125,7 @@ namespace WebCamViewAndCapture
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnCapture;
     }
 }
 

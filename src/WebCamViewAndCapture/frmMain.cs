@@ -29,7 +29,7 @@ namespace WebCamViewAndCapture
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            btnStop.PerformClick();
+            TeardownDirectShowGraph();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -40,6 +40,11 @@ namespace WebCamViewAndCapture
         private void btnStop_Click(object sender, EventArgs e)
         {
             StopVideoStream();
+        }
+
+        private void btnCapture_Click(object sender, EventArgs e)
+        {
+            VideoWindowSnapshot((IVMRFilterConfig9)VmrRenderer);
         }
     }
 }
